@@ -106,8 +106,8 @@ public class Area {
 	// SOLUCION
 	public synchronized void enter(Patient p) {
 		System.out.println("Patient " + p.getNumber() + " trying to enter " + this.name);
-		this.waiting++;
 		try {
+			this.waiting++;
 			while (this.numPatients >= this.capacity) {
 				System.out.println("Patient " + p.getNumber() + " waiting for " + this.name);
 				wait();
@@ -138,7 +138,7 @@ public class Area {
 	 * 
 	 * @return The capacity.
 	 */
-	public synchronized int getCapacity() {
+	public int getCapacity() {
 		return this.capacity;
 	}
 
